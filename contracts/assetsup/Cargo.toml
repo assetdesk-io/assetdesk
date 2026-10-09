@@ -1,0 +1,18 @@
+[package]
+name = "assetdesk"
+version = "0.1.0"
+edition = "2021"
+# Deployed as WASM to Stellar, never published to crates.io.
+publish = false
+
+[lib]
+crate-type = ["lib", "cdylib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+# Property-based tests for share-accounting invariants ([SC-50]).
+proptest = "1"

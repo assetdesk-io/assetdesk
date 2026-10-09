@@ -1,0 +1,15 @@
+[package]
+name = "asset-maintenance"
+version = "0.1.0"
+edition = "2021"
+# Deployed as WASM to Stellar, never published to crates.io.
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
